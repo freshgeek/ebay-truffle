@@ -15,18 +15,20 @@
 ###  ipfs
 
 1. 配置环境变量、或者直接写死
-export ipfs_staging=/root/ipfs/staging/
-export ipfs_data=/root/ipfs/data/
+
+> export ipfs_staging=/root/ipfs/staging/
+> export ipfs_data=/root/ipfs/data/
 
 2. docker 启动
-docker run -d --name ipfs -v $ipfs_staging:/export -v $ipfs_data:/data/ipfs -p 4001:4001 -p 4001:4001/udp -p 5001:5001 -p 8080:8080  ipfs/kubo:latest
+> docker run -d --name ipfs -v $ipfs_staging:/export -v $ipfs_data:/data/ipfs -p 4001:4001 -p 4001:4001/udp -p 5001:5001 -p 8080:8080  ipfs/kubo:latest
 3. 进入docker 容器
-docker exec -it ipfs /bin/sh
+> docker exec -it ipfs /bin/sh
 4. 然后添加cros  
-ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin '["*"]' 
+> ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin '["*"]' 
 5. 然后重启docker 容器 
-docker restart ipfs
-6. 访问5001 http://118.31.246.132:5001/webui 
+> docker restart ipfs
+6. 访问5001 
+> http://ip:5001/webui 
 
 ### 安装vs插件 Truffle for VS Code 
 
