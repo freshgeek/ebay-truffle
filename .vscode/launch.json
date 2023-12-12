@@ -1,0 +1,19 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "truffle",
+            "request": "launch",
+            "name": "Debug Transaction with Truffle",
+            "stopOnEntry": false,
+            "txHash": "0xeec2ecfd5cb1c38d04bd73dd1fe085f50b75ca85b59d07e531786573763c67bf",
+            "files": [],
+            "workingDirectory": "${workspaceFolder}",
+            "providerUrl": "http://127.0.0.1:8545",
+            "disableFetchExternal": false
+        }
+    ]
+}

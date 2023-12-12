@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Decentralized Ecommerce Store</title>
+    <link href="https://fonts.loli.net/css?family=Open+Sans" rel="stylesheet" />
+    <link
+      href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.2.4/dist/web3.min.js"></script>
+    <script src="./index.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1 class="text-center">商品详情</h1>
+      <div class="container">
+        <div class="row" id="product-details">
+          <div style="display: none" class="alert alert-success" id="msg"></div>
+          <div class="alert alert-success" id="current-account"></div>
+
+          <button type="button" id="back-home" class="btn btn-primary">
+            back home
+          </button>
+
+          <div class="col-sm-12">
+            <div class="col-sm-4">
+              <div id="product-image"></div>
+              <div id="product-name"></div>
+              <div id="product-seller"></div>
+              <h5>Auction 开始 In:<span id="product-auction-start"> </span></h5>
+
+              <h5>Auction 结束 In:<span id="product-auction-end"> </span></h5>
+            </div>
+            <div class="col-sm-8">
+              <h3>起拍 Price: <span id="product-price"></span></h3>
+              <h3>bid 数: <span id="product-bids-num"></span></h3>
+              <form id="bidding" class="col-sm-4">
+                <h4>Your Bid</h4>
+                <div class="form-group">
+                  <label for="bid-amount">Enter Bid Amount</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="bid-amount"
+                    id="bid-amount"
+                    placeholder="Amount > Start Price"
+                    required="required"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="bid-send-amount">Enter Amount To Send</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="bid-send-amount"
+                    id="bid-send-amount"
+                    placeholder="Amount >= Bid Amount"
+                    required="required"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="secret-text">Enter Secret Text</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="secret-text"
+                    id="secret-text"
+                    placeholder="Any random text"
+                    required="required"
+                  />
+                </div>
+                <input type="hidden" name="product-id" id="product-id" />
+                <button type="submit" class="btn btn-primary">
+                  Submit Bid
+                </button>
+              </form>
+              <form id="revealing" class="col-sm-4">
+                <h4>Reveal Bid</h4>
+                <div class="form-group">
+                  <label for="actual-amount">Amount You Bid</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="actual-amount"
+                    id="actual-amount"
+                    placeholder="Amount > Start Price"
+                    required="required"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="reveal-secret-text">Enter Secret Text</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="reveal-secret-text"
+                    id="reveal-secret-text"
+                    placeholder="Any random text"
+                    required="required"
+                  />
+                </div>
+                <input type="hidden" name="product-id" id="product-id" />
+                <button type="submit" class="btn btn-primary">
+                  Reveal Bid
+                </button>
+              </form>
+              <form id="finalize-auction" class="col-sm-6">
+                <input type="hidden" name="product-id" id="product-id" />
+                <button type="submit" class="btn form-submit">
+                  Finalize Auction
+                </button>
+              </form>
+              <div id="product-status"></div>
+              <div id="escrow-info">
+                <div id="buyer"></div>
+                <div id="seller"></div>
+                <div id="arbiter"></div>
+                <div id="release-count"></div>
+                <div id="refund-count"></div>
+                <a id="release-funds" class="btn form-submit"
+                  >Release Amount to Seller</a
+                >
+                <a id="refund-funds" class="btn form-submit"
+                  >Refund Amount to Buyer</a
+                >
+              </div>
+            </div>
+          </div>
+          <div id="product-desc" class="col-sm-12">
+            <h5>Product Description</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
