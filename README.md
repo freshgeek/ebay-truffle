@@ -1,5 +1,6 @@
-#  ebay 分布式 竞拍 
-> 视频教程，其中版本坑比较多：https://www.bilibili.com/video/BV1EJ411D7SL?p=1
+# 仿ebay 分布式 区块链  竞拍项目 
+> 对应的视频教程，其中版本坑比较多：https://www.bilibili.com/video/BV1EJ411D7SL?p=1
+> 本项目主要是学习以太坊区块链
 
 ## 功能说明
 
